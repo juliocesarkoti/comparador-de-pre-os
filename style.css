@@ -478,7 +478,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1120px) {
   .thumbs {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -489,38 +489,64 @@ body {
     min-height: 680px;
   }
   .thumb-item {
-    width: 95vw;
-    max-width: 180px;
+    width: auto;
+    max-width: auto;
     height: 320px; /* fixa altura dos cards no mobile/tablet para evitar saltos */
   }
 }
 @media (max-width: 500px) {
+  /* Mobile: use single-column layout and make cards fit the container */
   .thumbs {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr; /* one card per row to avoid overflow */
+    gap: 12px;
+    margin-top: 18px;
+    padding: 0 16px; /* keep cards away from screen edges */
+    box-sizing: border-box;
+    justify-items: stretch;
   }
   .thumb-item {
-    max-width: 140px;
-    width: 98vw;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* ensure padding/border don't increase width */
+    height: auto; /* allow card height to adapt on small screens */
+  }
+  .thumbs img {
+    width: 100px; /* keep product image reasonable on mobile */
+    max-width: 40%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
-@media (max-width: 500px) {
-  .cabecalho-text h1 {
-    margin-top: 300px;
-    font-size: 1.1rem;
-    margin-top: 5%;
+/* Para telas maiores que iPhone X (largura > 375px) usar 2 colunas
+   Ex.: iPhone XR/11 na vertical tem 414px; essa regra cobre 376px-768px */
+@media (min-width: 376px) and (max-width: 768px) {
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+    padding: 0 12px;
+    justify-items: stretch;
+    box-sizing: border-box;
   }
   .thumb-item {
-    width: 98vw;
-    max-width: 98vw;
-    /* manter altura fixa também no mobile para evitar que o
-       container .cabecalho encolha/expanda quando os thumbs
-       trocarem — o conteúdo interno pode rolar se necessário */
-    height: 320px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* permite conteúdo adaptar altura */
+    box-sizing: border-box;
+  }
+  .thumbs img {
+    width: 90px;
+    max-width: 40%;
   }
 }
+
+/* Removed duplicate/overlapping mobile rules above and consolidated
+   them into a single @media (max-width: 500px) block to prevent
+   conflicting width rules that caused horizontal overflow. */
 
 @media (max-width: 768px) {
   .logo-area {
