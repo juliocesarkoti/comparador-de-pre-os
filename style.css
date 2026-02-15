@@ -1,0 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos do Cabeçalho */
+.cabecalho {
+    background: linear-gradient(135deg, #667eea9d 0%, #764ba27c 100%);
+    width: 100%; /* ocupa toda a largura disponível */
+    max-width: 1980px; /* largura máxima solicitada, sem extrapolar telas menores */
+    height: 900px; /* altura fixa solicitada */
+    margin: 0 auto; /* centraliza horizontalmente */
+    padding: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.logo-img {
+  height: 76px; /* dobrado de 38px para 76px */
+  width: auto;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  align-self: center; /* centralizar verticalmente dentro da barra */
+}
+.top-area {
+  width: 1000px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.cabecalho-bar {
+  width: 100%;
+  height: 60px;
+  max-width: 1000px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+}
+
+.cabecalho-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;   
+}
+
+.cabecalho-text {
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+/* Garantir que o conteúdo do texto (H1 + busca) esteja centralizado como bloco */
+.cabecalho-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cabecalho-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 18px;
+    line-height: 1.05;
+    font-family: 'Futura', 'Futura PT', 'Trebuchet MS', Arial, sans-serif;
+    font-weight: 900; /* Bold bem grosso */
+    color: darkslateblue;
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 90vw;
+    display: block;
+    text-align: center;
+}
+
+/* Área de busca */
+.search-area {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column; /* botão abaixo da caixa no desktop */
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px; /* desce um pouco abaixo do H1 */
+}
+
+.search-box {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+.search-btn {
+    padding: 8px 14px; /* botão menor */
+    border-radius: 8px;
+    border: none;
+    background: #ffffff;
+    color: #6b4aa1;
+    font-weight: 700;
+    cursor: pointer;
+    width: auto; /* botão pequeno */
+    align-self: center; /* centraliza abaixo da pesquisa */
+}
+
+/* Miniaturas */
+.thumbs {
+  display: flex;
+  gap: 54px; /* aumentado ~40px em relação ao gap anterior (14px -> 54px) */
+  margin-top: 98px; /* deslocado 80px a mais que o valor anterior (18px + 80px) */
+  justify-content: center;
+  align-items: flex-start; /* evita que itens causem mudança de altura no container */
+  min-height: 340px; /* reserva espaço para o carrossel e evita saltos ao trocar itens */
+}
+
+/* Container para cada miniatura com botão */
+.thumb-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* distribui conteúdo para manter altura estável */
+  gap: 10px;
+  border: 1px solid #222; /* contorno fino preto */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18); /* sombra suave */
+  border-radius: 8px;
+  background: none;
+  padding: 16px 12px;
+  height: 320px; /* altura fixa para evitar mudanças no layout ao trocar thumbs */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  border-radius: 12px;
+  border: 1.5px solid #222;
+  background: rgba(255,255,255,0.04);
+  overflow: hidden;
+  transition: opacity 0.32s ease, transform 0.32s ease;
+  will-change: opacity, transform;
+}
+
+/* Transições para fade quando trocar grupos */
+.thumb-item.is-hidden {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.thumb-item.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.thumbs img {
+    width: 110px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Botão "Ir para loja" abaixo de cada miniatura */
+.thumb-btn {
+    padding: 8px 18px;
+    background: #6b4aa1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.thumb-btn:hover {
+    background: #5a3a8a;
+}
+
+.cabecalho-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.cabecalho-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* imagem alinhada à direita */
+}
+
+.cabecalho-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação suave nos cards */
+.thumb-item {
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.thumb-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    border-color: #6b4aa1;
+}
+
+/* Rodapé responsivo */
+.footer {
+    width: 100vw;
+    background: linear-gradient(135deg, #667eea9d 0%, #764ba27c 100%);
+    color: #fff;
+    text-align: center;
+    padding: 24px 8px 12px 8px;
+    font-size: 1rem;
+    margin-top: 48px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.footer a:hover {
+    color: #d1c4e9;
+}
+/* estilos fora de media queries (mantidos) */
+
+.login-trigger {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  left: auto;
+  z-index: 30;
+  background: transparent; /* apenas o ícone */
+  color: #3c3c3b;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-trigger:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* estilo do ícone de 3 riscos */
+.login-trigger .burger {
+  display: inline-block;
+  width: 28px;
+  height: 18px;
+}
+.login-trigger .burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: currentColor; /* usa a cor definida em .login-trigger */
+  border-radius: 2px;
+  margin: 3px 0;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.login-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.login-modal-content {
+    background: linear-gradient(135deg, #ffffffde 0%, #ffffffcd 100%);
+    width: 300px;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.close-modal {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.product-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 120;
+}
+.product-modal-content {
+  background: #fff;
+  width: 520px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  position: relative;
+}
+.product-modal .close-modal {
+  color: #111; /* X de fechar em preto para modal de produto */
+}
+.login-modal .close-modal {
+  color: #111; /* X de fechar em preto também para modal de login */
+}
+.product-body {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.product-body img {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #f8f8f8;
+  padding: 8px;
+}
+.product-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.google-login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #dadada;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    margin: 32px auto 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+    justify-content: center;
+}
+.google-login-btn:hover {
+    background: #f5f5f5;
+}
+
+.logo-area {
+  position: absolute; /* centraliza horizontalmente sobre a cabecalho-bar */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent; /* sem caixa branca */
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* evita que a área capture cliques; o botão de login continua clicável */
+}
+
+/* permitir que a imagem ainda receba eventos (por exemplo, se quiser link) */
+.logo-area .logo-img {
+  pointer-events: auto;
+}
+.top-bar {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto 24px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+  padding-top: 24px;
+}
+
+/* Media queries (movidas para o final do arquivo) */
+@media (max-width: 768px) {
+    .cabecalho {
+   padding: 30px 15px;
+   height: 740px; /* no mobile, permitir altura automática */
+   /* garantir altura mínima no mobile para evitar "saltos" quando
+     os thumb-items trocarem: aumentar para acomodar 2 linhas de cards */
+   align-items: flex-start; /* empilha conteúdo a partir do topo para estabilidade */
+    }
+
+    .cabecalho-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cabecalho-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .cabecalho-text p {
+        font-size: 1rem;
+    }
+
+    .cabecalho-image img {
+        max-width: 250px;
+    }
+
+    /* No mobile, manter input e botão lado a lado */
+    .search-area {
+        flex-direction: row;
+    }
+
+    .search-btn {
+        width: auto;
+    }
+}
+
+@media (max-width: 1280px) {
+    .cabecalho {
+        height: auto;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+  .login-trigger {
+    top: 16px;
+    right: 16px;
+    left: auto;
+    font-size: 0.95rem;
+    padding: 8px; /* manter padding pequeno para o ícone */
+    z-index: 30;
+    background: transparent;
+    box-shadow: none;
+    color: #6b4aa1;
+  }
+}
+
+@media (max-width: 500px) {
+  .cabecalho-text h1 {
+    margin-top: 5%;
+    word-break: break-word;
+    margin-top: 5vh;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo-area {
+    /* manter centralizada também em tablets */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0; /* sem caixa/padding */
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    pointer-events: none;
+  }
+  .thumbs {
+    gap: 24px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 24px;
+    justify-items: center;
+    /* reservar espaço para até 2 linhas de thumb-items (cada 320px) */
+    min-height: 680px;
+  }
+  .thumb-item {
+    width: 95vw;
+    max-width: 180px;
+    height: 320px; /* fixa altura dos cards no mobile/tablet para evitar saltos */
+  }
+}
+@media (max-width: 500px) {
+  .thumbs {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .thumb-item {
+    max-width: 140px;
+    width: 98vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .cabecalho-text h1 {
+    margin-top: 300px;
+    font-size: 1.1rem;
+    margin-top: 5%;
+  }
+  .thumb-item {
+    width: 98vw;
+    max-width: 98vw;
+    /* manter altura fixa também no mobile para evitar que o
+       container .cabecalho encolha/expanda quando os thumbs
+       trocarem — o conteúdo interno pode rolar se necessário */
+    height: 320px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-area {
+    /* manter centralizada em mobile */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0; /* sem caixa/padding no mobile */
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    pointer-events: none;
+  }
+  .logo-img {
+    height: 56px; /* dobrado de 28px para 56px em mobile/tablet */
+  }
+}
+
+@media (max-width: 1100px) {
+  .top-bar {
+    max-width: 98vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: row;
+    max-width: 100vw;
+    padding-top: 10px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .logo-area {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .logo-img {
+    height: 56px;
+  }
+  .login-trigger{ 
+    font-size: 0.95rem;
+    padding: 8px;
+    margin-left: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #3c3c3b; }
+}

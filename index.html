@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparador de Site</title>
+  <link rel="icon" href="ecompara-02.png" type="image/png">
+  <link rel="shortcut icon" href="ecompara-02.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="ecompara-02.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="ecompara-02.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="ecompara-02.png">
+  <meta name="theme-color" content="#6b4aa1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="cabecalho">
+    <div class="cabecalho-content">
+      <div class="cabecalho-bar">
+        <div class="logo-area">
+          <img src="ecompara-01.png" alt="Logo" class="logo-img">
+        </div>
+        <button class="login-trigger" onclick="openLoginModal()" aria-controls="loginModal" aria-expanded="false" aria-label="Abrir login">
+          <span class="burger" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="cabecalho-text">
+        <h1>QUEM COMPARA ECONOMIZA</h1>
+      </div>
+
+      <div class="search-area">
+        <input type="text" class="search-box" placeholder="Digite o que deseja comparar...">
+        <button class="search-btn" onclick="openProductModal()">COMPARE JÁ</button>
+      </div>
+
+      <div class="thumbs">
+        <div class="thumb-item" data-title="Liquidificador X" data-price="R$ 4.499,00">
+          <img src="-1346812222.png" alt="Liquidificador X" class="product-img">
+          <img src="logo-loja.png" alt="logo1" class="store-logo">
+          <div class="price-text">R$ 4.499,00 à vista</div>
+          <button class="thumb-btn">Ir para loja</button>
+        </div>
+        <div class="thumb-item" data-title="Liquidificador Y" data-price="R$ 4.499,00">
+          <img src="-1346812222.png" alt="Liquidificador Y" class="product-img">
+          <img src="logo-loja.png" alt="logo2" class="store-logo">
+          <div class="price-text">R$ 4.499,00 à vista</div>
+          <button class="thumb-btn">Ir para loja</button>
+        </div>
+        <div class="thumb-item" data-title="Liquidificador Z" data-price="R$ 4.499,00">
+          <img src="-1346812222.png" alt="Liquidificador Z" class="product-img">
+          <img src="logo-loja.png" alt="logo3" class="store-logo">
+          <div class="price-text">R$ 4.499,00 à vista</div>
+          <button class="thumb-btn">Ir para loja</button>
+        </div>
+
+        <div class="thumb-item" data-title="Liquidificador A" data-price="R$ 4.499,00">
+          <img src="liqui.jpeg" alt="Liquidificador A" class="product-img">
+          <img src="logo-loja.png" alt="logo4" class="store-logo">
+          <div class="price-text">R$ 4.499,00 à vista</div>
+          <button class="thumb-btn">Ir para loja</button>
+        </div>
+        <div class="thumb-item" data-title="Liquidificador B" data-price="R$ 4.499,00">
+          <img src="liqui.jpeg" alt="Liquidificador B" class="product-img">
+          <img src="logo-loja.png" alt="logo5" class="store-logo">
+          <div class="price-text">R$ 4.499,00 à vista</div>
+          <button class="thumb-btn">Ir para loja</button>
+        </div>
+        <div class="thumb-item" data-title="Liquidificador C" data-price="R$ 4.499,00">
+          <img src="liqui.jpeg" alt="Liquidificador C" class="product-img">
+          <img src="logo-loja.png" alt="logo6" class="store-logo">
+          <div class="price-text">R$ 4.499,00 à vista</div>
+          <button class="thumb-btn">Ir para loja</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main></main>
+
+  <!-- Modais -->
+  <div class="login-modal" id="loginModal" style="display:none;">
+    <div class="login-modal-content">
+      <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+      <h2 style="color: #2a2a2a;">Entrar</h2>
+      <button class="google-login-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="height:24px;vertical-align:middle;margin-right:8px;">
+        Entrar com Google
+      </button>
+    </div>
+  </div>
+
+  <div class="product-modal" id="productModal" style="display:none;">
+    <div class="product-modal-content">
+      <span class="close-modal" onclick="closeProductModal()">&times;</span>
+      <div class="product-body">
+        <img src="" alt="produto" id="productModalImg">
+        <div class="product-info">
+          <h3 id="productModalTitle">Produto</h3>
+          <p id="productModalPrice" style="font-weight:700;font-size:1.25rem;margin-top:8px;">R$ 0,00</p>
+          <button class="thumb-btn" style="margin-top:16px;">Ir para loja</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <!-- Rodapé atualizado com informações reais -->
+    <p>Desenvolvido por julio cesar koti &bull; <a href="https://github.com/juliocesarkoti/comparador-de-pre-o" target="_blank" rel="noopener">GitHub</a> &bull; <a href="https://www.linkedin.com/in/julio-koti-91b136101" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
