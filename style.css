@@ -613,7 +613,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 6px;
     margin-top: 8px;
   }
 
@@ -637,9 +636,8 @@ body {
 
   .thumbs {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-top: 18px;
     padding: 0 16px;
     box-sizing: border-box;
     justify-items: stretch;
