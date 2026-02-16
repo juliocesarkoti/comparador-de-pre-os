@@ -373,6 +373,7 @@ body {
 }
 
 .thumb-item.is-visible {
+  margin-top: 20px;
   opacity: 1;
   transform: none;
 }
