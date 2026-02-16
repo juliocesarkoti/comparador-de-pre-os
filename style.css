@@ -18,7 +18,7 @@ body {
   background: linear-gradient(135deg, #f1f3fe 0%, #764ba27c 100%);
   width: 100%;
   max-width: 1980px;
-  height: 900px;
+  height: auto;
   margin: 0 auto;
   padding: 40px 20px;
   align-items: center;
