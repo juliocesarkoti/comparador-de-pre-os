@@ -1,129 +1,171 @@
+/* ========================================
+   RESET E BASE
+   ======================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-/* Estilos do Cabeçalho */
+/* ========================================
+   CABEÇALHO
+   ======================================== */
 .cabecalho {
-    background: linear-gradient(135deg, #f1f3fe 0%, #764ba27c 100%);
-    width: 100%; /* ocupa toda a largura disponível */
-    max-width: 1980px; /* largura máxima solicitada, sem extrapolar telas menores */
-    height: 900px; /* altura fixa solicitada */
-    margin: 0 auto; /* centraliza horizontalmente */
-    padding: 40px 20px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  background: linear-gradient(135deg, #f1f3fe 0%, #764ba27c 100%);
+  width: 100%;
+  max-width: 1980px;
+  height: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-.logo-img {
-  flex: 1;
-  height: 76px; /* dobrado de 38px para 76px */
-  width: fill;
-  margin-left: auto;
-  margin-right: auto;
-}
-.logo-area {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: transparent; /* sem caixa branca */
-  border-radius: 0;
-  box-shadow: none;
-  pointer-events: none; /* evita que a área capture cliques; o botão de login continua clicável */
-}
+
 .cabecalho-bar {
   margin: 0 auto;
   width: auto;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza horizontalmente */
-  gap: 16px; /* Espaço entre os itens, se desejar */
+  justify-content: center;
+  gap: 16px;
   height: auto;
 }
 
 .cabecalho-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .cabecalho-text {
-    width: 100%;
-    color: white;
-    text-align: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-/* Garantir que o conteúdo do texto (H1 + busca) esteja centralizado como bloco */
-.cabecalho-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 
 .cabecalho-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 18px;
-    line-height: 1.05;
-    font-family: 'Futura', 'Futura PT', 'Trebuchet MS', Arial, sans-serif;
-    font-weight: 900; /* Bold bem grosso */
-    color: #6b4aa1;
-    white-space: normal !important;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    max-width: 90vw;
-    display: block;
-    text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 18px;
+  line-height: 1.05;
+  font-family: 'Futura', 'Futura PT', 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  color: #6b4aa1;
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 90vw;
+  display: block;
+  text-align: center;
 }
+
+.cabecalho-text p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.cabecalho-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cabecalho-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   LOGO
+   ======================================== */
+.logo-img {
+  flex: 1;
+  height: 76px;
+  width: fill;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-area {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* ========================================
+   LOCALIZAÇÃO
+   ======================================== */
 .localizacao-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end; /* alinha à direita */
-    padding-left: 5%;
+  width: 100%;
+  display: flex;
+  padding-left: 5%;
 }
+
 .localizacao {
-    font-size: 0.7rem;
-    color: #333;
-    opacity: 0.9;
-    align-items: left;
-    padding-top: 10px;
+  display: flex;
+  font-size: 0.7rem;
+  color: #333;
+  opacity: 0.9;
+  padding-top: 10px;
 }
+
 .icon-localizacao {
-    width: 7%;
-    height: 7%;
+  width: 7%;
+  height: 7%;
 }
+
+/* ========================================
+   BANNER CAROUSEL
+   ======================================== */
 .banner-carousel {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 680px;
+  height: auto;
   margin: 0 auto;
   overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
+
 .banner-slide {
   display: none;
   width: 100%;
 }
+
 .banner-slide.active {
   display: block;
 }
+
 .banner-slide img {
   width: 100%;
   display: block;
 }
+
 .carousel-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 10px;
 }
+
 .carousel-dot {
   width: 12px;
   height: 12px;
@@ -132,21 +174,27 @@ body {
   cursor: pointer;
   transition: background 0.3s;
 }
+
 .carousel-dot.active {
   background: #333;
 }
+
+/* ========================================
+   CÍRCULOS (CATEGORIAS)
+   ======================================== */
 .container-circulos {
   padding-top: 15px;
-width: auto;
-margin: 0 auto;
-display: flex;
-gap: 16px; /* espaço entre os círculos */
-align-items: center;
-justify-content: center;
+  width: auto;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
 }
+
 .container-circulos .circulo {
   display: flex;
-  gap: 16px;          /* espaço entre eles */
+  gap: 16px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -154,46 +202,55 @@ justify-content: center;
   height: 50px;
   border-radius: 50%;
   background: #eee;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
+
 .container-circulos .circulo img {
   width: 30px;
   height: 30px;
 }
+
 .container-circulos .circulo:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
 }
 
-/* Área de busca */
+/* ========================================
+   ÁREA DE BUSCA
+   ======================================== */
 .search-area {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    gap: 10px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  gap: 10px;
 }
 
 .search-box {
-    padding: 5px 10px;
-    border-radius: 8px;
-    border: none;
-    font-size: 0,2rem;
-    width: 200px;
-    display: block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  width: 200px;
+  display: block;
 }
 
 .search-btn {
-    padding: 8px 10px; /* botão menor */
-    border-radius: 8px;
-    border: none;
-    background: #ffffff;
-    color: #6b4aa1;
-    font-weight: 700;
-    cursor: pointer;
-    width: auto; /* botão pequeno */
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background: #ffffff;
+  color: #6b4aa1;
+  font-weight: 700;
+  cursor: pointer;
+  width: auto;
 }
+
+/* ========================================
+   LOGIN
+   ======================================== */
 .login-trigger {
   flex: 2;
-  background: transparent; /* apenas o ícone */
+  background: transparent;
   color: #ffffff;
   border-radius: 4px;
   font-weight: 700;
@@ -203,87 +260,104 @@ justify-content: center;
   cursor: pointer;
   transition: transform 0.12s ease, opacity 0.12s ease;
 }
+
 .login-trigger:hover {
   transform: translateY(-2px);
   opacity: 0.95;
 }
 
-/* estilo do ícone de 3 riscos */
 .login-trigger .burger {
   display: inline-block;
   width: 28px;
   height: 18px;
 }
+
 .login-trigger .burger span {
   display: block;
   height: 3px;
   width: 100%;
-  background: currentColor; /* usa a cor definida em .login-trigger */
+  background: currentColor;
   border-radius: 2px;
   margin: 3px 0;
   transition: transform 0.12s ease, opacity 0.12s ease;
 }
 
 .login-modal {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
+
 .login-modal-content {
-    background: linear-gradient(135deg, #ffffffde 0%, #ffffffcd 100%);
-    width: 300px;
-    padding: 32px 24px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: linear-gradient(135deg, #ffffffde 0%, #ffffffcd 100%);
+  width: 300px;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .close-modal {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-}
-.banner-carousel {
-    width: 100%;
-    max-width: 680px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  margin: 32px auto 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+  justify-content: center;
+}
 
-/* Miniaturas */
+.google-login-btn:hover {
+  background: #f5f5f5;
+}
+
+/* ========================================
+   MINIATURAS (THUMBS)
+   ======================================== */
 .thumbs {
   display: flex;
-  gap: 54px; /* aumentado ~40px em relação ao gap anterior (14px -> 54px) */
-  margin-top: 98px; /* deslocado 80px a mais que o valor anterior (18px + 80px) */
+  gap: 54px;
+  margin-top: 98px;
   justify-content: center;
-  align-items: flex-start; /* evita que itens causem mudança de altura no container */
-  min-height: 340px; /* reserva espaço para o carrossel e evita saltos ao trocar itens */
+  align-items: flex-start;
+  min-height: 340px;
 }
 
-/* Container para cada miniatura com botão */
 .thumb-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* distribui conteúdo para manter altura estável */
+  justify-content: space-between;
   gap: 10px;
-  border: 1px solid #222; /* contorno fino preto */
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18); /* sombra suave */
-  border-radius: 8px;
-  background: none;
   padding: 16px 12px;
-  height: 320px; /* altura fixa para evitar mudanças no layout ao trocar thumbs */
+  height: 320px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   border-radius: 12px;
   border: 1.5px solid #222;
@@ -293,96 +367,60 @@ justify-content: center;
   will-change: opacity, transform;
 }
 
-/* Transições para fade quando trocar grupos */
 .thumb-item.is-hidden {
   opacity: 0;
   transform: translateY(10px);
 }
+
 .thumb-item.is-visible {
   opacity: 1;
   transform: none;
 }
 
-.thumbs img {
-    width: 110px;
-    height: auto;
-    border-radius: 8px;
+.thumb-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  border-color: #6b4aa1;
 }
 
-/* Botão "Ir para loja" abaixo de cada miniatura */
+.thumbs img {
+  width: 110px;
+  height: auto;
+  border-radius: 8px;
+}
+
 .thumb-btn {
-    padding: 8px 18px;
-    background: #6b4aa1;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  padding: 8px 18px;
+  background: #6b4aa1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .thumb-btn:hover {
-    background: #5a3a8a;
+  background: #5a3a8a;
 }
 
-.cabecalho-text p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.cabecalho-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* imagem alinhada à direita */
-}
-
-.cabecalho-image img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Animação suave nos cards */
-.thumb-item {
-    transition: transform 0.25s, box-shadow 0.25s;
-}
-.thumb-item:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
-    border-color: #6b4aa1;
-}
-
-/* Rodapé responsivo */
-.footer {
-    width: 100vw;
-    background: linear-gradient(135deg, #667eea9d 0%, #764ba27c 100%);
-    color: #fff;
-    text-align: center;
-    padding: 24px 8px 12px 8px;
-    font-size: 1rem;
-    margin-top: 48px;
-}
-.footer a {
-    color: #fff;
-    text-decoration: underline;
-    font-weight: 600;
-}
-.footer a:hover {
-    color: #d1c4e9;
-}
-/* estilos fora de media queries (mantidos) */
+/* ========================================
+   MODAL DE PRODUTO
+   ======================================== */
 .product-modal {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0,0,0,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 120;
 }
+
 .product-modal-content {
   background: #fff;
   width: 520px;
@@ -391,17 +429,21 @@ justify-content: center;
   box-shadow: 0 12px 40px rgba(0,0,0,0.25);
   position: relative;
 }
+
 .product-modal .close-modal {
-  color: #111; /* X de fechar em preto para modal de produto */
+  color: #111;
 }
+
 .login-modal .close-modal {
-  color: #111; /* X de fechar em preto também para modal de login */
+  color: #111;
 }
+
 .product-body {
   display: flex;
   gap: 18px;
   align-items: center;
 }
+
 .product-body img {
   width: 160px;
   height: auto;
@@ -410,90 +452,66 @@ justify-content: center;
   background: #f8f8f8;
   padding: 8px;
 }
+
 .product-info h3 {
   margin: 0;
   font-size: 1.1rem;
 }
-.google-login-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #fff;
-    border: 1px solid #dadada;
-    border-radius: 6px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #444;
-    cursor: pointer;
-    margin: 32px auto 0 auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: background 0.2s;
-    justify-content: center;
-}
-.google-login-btn:hover {
-    background: #f5f5f5;
+
+/* ========================================
+   RODAPÉ
+   ======================================== */
+.footer {
+  width: 100vw;
+  background: linear-gradient(135deg, #667eea9d 0%, #764ba27c 100%);
+  color: #fff;
+  text-align: center;
+  padding: 24px 8px 12px 8px;
+  font-size: 1rem;
+  margin-top: 48px;
 }
 
-/* Media queries (movidas para o final do arquivo) */
-@media (max-width: 768px) {
-    .cabecalho {
-   padding: 30px 15px;
-   height: 740px; /* no mobile, permitir altura automática */
-   /* garantir altura mínima no mobile para evitar "saltos" quando
-     os thumb-items trocarem: aumentar para acomodar 2 linhas de cards */
-   align-items: flex-start; /* empilha conteúdo a partir do topo para estabilidade */
-    }
-
-    .cabecalho-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cabecalho-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .cabecalho-text p {
-        font-size: 1rem;
-    }
-
-    .cabecalho-image img {
-        max-width: 250px;
-    }
-
-    /* No mobile, manter input e botão lado a lado */
-    .search-area {
-        flex-direction: row;
-    }
-
-    .search-btn {
-        width: auto;
-        font-size: x-small;
-    }
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
+.footer a:hover {
+  color: #d1c4e9;
+}
+
+/* ========================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ======================================== */
+
+/* Telas grandes (até 1280px) */
 @media (max-width: 1280px) {
-    .cabecalho {
-        height: auto;
-        padding: 40px 20px;
-    }
+  .cabecalho {
+    height: auto;
+    padding: 40px 20px;
+  }
 }
 
-
-
-@media (max-width: 500px) {
-  .cabecalho-text h1 {
-    margin-top: 5%;
-    word-break: break-word;
-    margin-top: 5vh;
-    overflow-wrap: break-word;
+/* Telas médias (até 1120px) */
+@media (max-width: 1120px) {
+  .thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 24px;
+    justify-items: center;
+    min-height: 680px;
   }
-  .cabecalho-bar{
+
+  .thumb-item {
     width: auto;
+    max-width: none;
+    height: 320px;
   }
 }
 
+/* Tablets (até 1024px) */
 @media (max-width: 1024px) {
   .thumbs {
     gap: 24px;
@@ -501,125 +519,155 @@ justify-content: center;
   }
 }
 
-@media (max-width: 1120px) {
+/* Tablets e smartphones maiores (376px - 768px) */
+@media (min-width: 376px) and (max-width: 768px) {
   .thumbs {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
-    margin-top: 24px;
-    justify-items: center;
-    /* reservar espaço para até 2 linhas de thumb-items (cada 320px) */
-    min-height: 680px;
-  }
-  .thumb-item {
-    width: auto;
-    max-width: auto;
-    height: 320px; /* fixa altura dos cards no mobile/tablet para evitar saltos */
-  }
-}
-@media (max-width: 500px) {
-  /* Mobile: use single-column layout and make cards fit the container */
-  .thumbs {
-    display: grid;
-    grid-template-columns: 1fr; /* one card per row to avoid overflow */
-    gap: 12px;
-    margin-top: 18px;
-    padding: 0 16px; /* keep cards away from screen edges */
-    box-sizing: border-box;
     justify-items: stretch;
+    box-sizing: border-box;
+    min-height: fit-content;
   }
+
   .thumb-item {
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box; /* ensure padding/border don't increase width */
-    height: auto; /* allow card height to adapt on small screens */
-  }
-  .thumbs img {
-    width: 100px; /* keep product image reasonable on mobile */
-    max-width: 40%;
     height: auto;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .container-circulos .circulo {
-  display: flex;
-  gap: 16px;          /* espaço entre eles */
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #eee;}
-  .container-circulos .circulo img {
-  width: 20px;
-  height: 20px;}
-  .localizacao{
-    align-items: left;
-  }
-  .localizacao-container{
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;}
-}
-
-
-/* Para telas maiores que iPhone X (largura > 375px) usar 2 colunas
-   Ex.: iPhone XR/11 na vertical tem 414px; essa regra cobre 376px-768px */
-@media (min-width: 376px) and (max-width: 768px) {
-  .thumbs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 18px;
-    padding: 0 12px;
-    justify-items: stretch;
     box-sizing: border-box;
   }
-  .thumb-item {
-    width: 100%;
-    max-width: 100%;
-    height: auto; /* permite conteúdo adaptar altura */
-    box-sizing: border-box;
-  }
+
   .thumbs img {
     width: 90px;
     max-width: 40%;
   }
 }
 
-/* Removed duplicate/overlapping mobile rules above and consolidated
-   them into a single @media (max-width: 500px) block to prevent
-   conflicting width rules that caused horizontal overflow. */
-
+/* Mobile (até 768px) */
 @media (max-width: 768px) {
+  .cabecalho {
+    padding: 30px 15px;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .cabecalho-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cabecalho-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .cabecalho-text p {
+    font-size: 1rem;
+  }
+
+  .cabecalho-image img {
+    max-width: 250px;
+  }
+
+  .search-area {
+    flex-direction: row;
+    order: 3;
+    width: 50%;
+    margin: 16px auto;
+  }
+
+  .cabecalho-bar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .logo-area {
+    order: 1;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 0; /* sem caixa/padding no mobile */
+    padding: 0;
     background: transparent;
     box-shadow: none;
     border-radius: 0;
     pointer-events: none;
   }
-  .logo-img {
-    height: 56px; /* dobrado de 28px para 56px em mobile/tablet */
-  }
-}
-  .logo-area {
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
-  }
+
   .logo-img {
     height: 56px;
   }
-  .login-trigger{ 
+
+  .login-trigger {
+    order: 2;
     font-size: 0.95rem;
     padding: 8px;
     margin-left: 0;
     background: transparent;
     box-shadow: none;
-    color: #3c3c3b; }
+    color: #3c3c3b;
+  }
+
+  .localizacao-container {
+    order: 4;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .localizacao {
+    text-align: center;
+    padding-top: 0;
+  }
+}
+
+/* Mobile pequeno (até 500px) */
+@media (max-width: 500px) {
+  .cabecalho-text h1 {
+    margin-top: 5vh;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .cabecalho-bar {
+    width: auto;
+  }
+
+  .thumbs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    justify-items: stretch;
+    height: 340px;
+  }
+
+  .thumb-item {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: auto;
+  }
+
+  .thumbs img {
+    width: 100px;
+    max-width: 40%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .container-circulos .circulo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .container-circulos .circulo img {
+    width: 20px;
+    height: 20px;
+  }
+}
