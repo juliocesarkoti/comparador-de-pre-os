@@ -1,3 +1,40 @@
+// --- Carrossel de Banners ---
+const bannerSlides = document.querySelectorAll('.banner-slide');
+const bannerDots = document.querySelectorAll('.carousel-dot');
+let currentBanner = 0;
+
+function showBanner(index) {
+  bannerSlides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+  bannerDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function nextBanner() {
+  currentBanner = (currentBanner + 1) % bannerSlides.length;
+  showBanner(currentBanner);
+}
+
+function prevBanner() {
+  currentBanner = (currentBanner - 1 + bannerSlides.length) % bannerSlides.length;
+  showBanner(currentBanner);
+}
+
+// Clique nos dots
+bannerDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    currentBanner = i;
+    showBanner(currentBanner);
+  });
+});
+
+// Troca automática a cada 5s
+setInterval(nextBanner, 5000);
+
+// Inicializa
+showBanner(currentBanner);
 // Seleções iniciais
 const allItems = Array.from(document.querySelectorAll('.thumb-item'));
 let filteredItems = allItems.slice();

@@ -10,42 +10,40 @@ body {
 
 /* Estilos do Cabeçalho */
 .cabecalho {
-    background: linear-gradient(135deg, #667eea9d 0%, #764ba27c 100%);
+    background: linear-gradient(135deg, #f1f3fe 0%, #764ba27c 100%);
     width: 100%; /* ocupa toda a largura disponível */
     max-width: 1980px; /* largura máxima solicitada, sem extrapolar telas menores */
     height: 900px; /* altura fixa solicitada */
     margin: 0 auto; /* centraliza horizontalmente */
     padding: 40px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 .logo-img {
+  flex: 1;
   height: 76px; /* dobrado de 38px para 76px */
-  width: auto;
-  display: block;
-  margin-left: 0;
-  margin-right: 0;
-  align-self: center; /* centralizar verticalmente dentro da barra */
+  width: fill;
+  margin-left: auto;
+  margin-right: auto;
 }
-.top-area {
-  width: 1000px;
-  height: 100px;
-  align-items: center;
-  justify-content: center;
+.logo-area {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent; /* sem caixa branca */
+  border-radius: 0;
+  box-shadow: none;
+  pointer-events: none; /* evita que a área capture cliques; o botão de login continua clicável */
 }
 .cabecalho-bar {
-  width: 100%;
-  height: 60px;
-  max-width: 1000px;
-  margin: 0 auto 24px auto;
+  margin: 0 auto;
+  width: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 50;
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 16px; /* Espaço entre os itens, se desejar */
+  height: auto;
 }
 
 .cabecalho-content {
@@ -55,7 +53,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px;   
 }
 
 .cabecalho-text {
@@ -71,13 +68,14 @@ body {
     align-items: center;
 }
 
+
 .cabecalho-text h1 {
     font-size: 3.5rem;
     margin-bottom: 18px;
     line-height: 1.05;
     font-family: 'Futura', 'Futura PT', 'Trebuchet MS', Arial, sans-serif;
     font-weight: 900; /* Bold bem grosso */
-    color: darkslateblue;
+    color: #6b4aa1;
     white-space: normal !important;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -85,28 +83,106 @@ body {
     display: block;
     text-align: center;
 }
+.localizacao-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* alinha à direita */
+    padding-left: 5%;
+}
+.localizacao {
+    font-size: 0.7rem;
+    color: #333;
+    opacity: 0.9;
+    align-items: left;
+    padding-top: 10px;
+}
+.icon-localizacao {
+    width: 7%;
+    height: 7%;
+}
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.banner-slide {
+  display: none;
+  width: 100%;
+}
+.banner-slide.active {
+  display: block;
+}
+.banner-slide img {
+  width: 100%;
+  display: block;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.carousel-dot.active {
+  background: #333;
+}
+.container-circulos {
+  padding-top: 15px;
+width: auto;
+margin: 0 auto;
+display: flex;
+gap: 16px; /* espaço entre os círculos */
+align-items: center;
+justify-content: center;
+}
+.container-circulos .circulo {
+  display: flex;
+  gap: 16px;          /* espaço entre eles */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #eee;
+}
+.container-circulos .circulo img {
+  width: 30px;
+  height: 30px;
+}
+.container-circulos .circulo:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+}
 
 /* Área de busca */
 .search-area {
     width: 100%;
-    max-width: 680px;
+    max-width: 900px;
     display: flex;
-    flex-direction: column; /* botão abaixo da caixa no desktop */
     gap: 10px;
-    justify-content: center;
-    margin-top: 30px; /* desce um pouco abaixo do H1 */
 }
 
 .search-box {
-    flex: 1;
-    padding: 12px 14px;
+    padding: 5px 10px;
     border-radius: 8px;
     border: none;
-    font-size: 1rem;
+    font-size: 0,2rem;
+    width: 200px;
+    display: block;
 }
 
 .search-btn {
-    padding: 8px 14px; /* botão menor */
+    padding: 8px 10px; /* botão menor */
     border-radius: 8px;
     border: none;
     background: #ffffff;
@@ -114,8 +190,76 @@ body {
     font-weight: 700;
     cursor: pointer;
     width: auto; /* botão pequeno */
-    align-self: center; /* centraliza abaixo da pesquisa */
 }
+.login-trigger {
+  flex: 2;
+  background: transparent; /* apenas o ícone */
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.login-trigger:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* estilo do ícone de 3 riscos */
+.login-trigger .burger {
+  display: inline-block;
+  width: 28px;
+  height: 18px;
+}
+.login-trigger .burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: currentColor; /* usa a cor definida em .login-trigger */
+  border-radius: 2px;
+  margin: 3px 0;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.login-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.login-modal-content {
+    background: linear-gradient(135deg, #ffffffde 0%, #ffffffcd 100%);
+    width: 300px;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.close-modal {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.banner-carousel {
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Miniaturas */
 .thumbs {
@@ -230,76 +374,6 @@ body {
     color: #d1c4e9;
 }
 /* estilos fora de media queries (mantidos) */
-
-.login-trigger {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  left: auto;
-  z-index: 30;
-  background: transparent; /* apenas o ícone */
-  color: #3c3c3b;
-  padding: 8px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 1rem;
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
-  transition: transform 0.12s ease, opacity 0.12s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.login-trigger:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
-}
-
-/* estilo do ícone de 3 riscos */
-.login-trigger .burger {
-  display: inline-block;
-  width: 28px;
-  height: 18px;
-}
-.login-trigger .burger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: currentColor; /* usa a cor definida em .login-trigger */
-  border-radius: 2px;
-  margin: 3px 0;
-  transition: transform 0.12s ease, opacity 0.12s ease;
-}
-
-.login-modal {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-}
-.login-modal-content {
-    background: linear-gradient(135deg, #ffffffde 0%, #ffffffcd 100%);
-    width: 300px;
-    padding: 32px 24px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.close-modal {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-}
 .product-modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -361,37 +435,6 @@ body {
     background: #f5f5f5;
 }
 
-.logo-area {
-  position: absolute; /* centraliza horizontalmente sobre a cabecalho-bar */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: transparent; /* sem caixa branca */
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none; /* evita que a área capture cliques; o botão de login continua clicável */
-}
-
-/* permitir que a imagem ainda receba eventos (por exemplo, se quiser link) */
-.logo-area .logo-img {
-  pointer-events: auto;
-}
-.top-bar {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto 24px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 50;
-  padding-top: 24px;
-}
-
 /* Media queries (movidas para o final do arquivo) */
 @media (max-width: 768px) {
     .cabecalho {
@@ -426,6 +469,7 @@ body {
 
     .search-btn {
         width: auto;
+        font-size: x-small;
     }
 }
 
@@ -436,19 +480,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-  .login-trigger {
-    top: 16px;
-    right: 16px;
-    left: auto;
-    font-size: 0.95rem;
-    padding: 8px; /* manter padding pequeno para o ícone */
-    z-index: 30;
-    background: transparent;
-    box-shadow: none;
-    color: #6b4aa1;
-  }
-}
+
 
 @media (max-width: 500px) {
   .cabecalho-text h1 {
@@ -457,21 +489,12 @@ body {
     margin-top: 5vh;
     overflow-wrap: break-word;
   }
+  .cabecalho-bar{
+    width: auto;
+  }
 }
 
 @media (max-width: 1024px) {
-  .logo-area {
-    /* manter centralizada também em tablets */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0; /* sem caixa/padding */
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
-    pointer-events: none;
-  }
   .thumbs {
     gap: 24px;
     margin-top: 40px;
@@ -518,7 +541,28 @@ body {
     display: inline-block;
     vertical-align: middle;
   }
+  .container-circulos .circulo {
+  display: flex;
+  gap: 16px;          /* espaço entre eles */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eee;}
+  .container-circulos .circulo img {
+  width: 20px;
+  height: 20px;}
+  .localizacao{
+    align-items: left;
+  }
+  .localizacao-container{
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;}
 }
+
 
 /* Para telas maiores que iPhone X (largura > 375px) usar 2 colunas
    Ex.: iPhone XR/11 na vertical tem 414px; essa regra cobre 376px-768px */
@@ -550,8 +594,6 @@ body {
 
 @media (max-width: 768px) {
   .logo-area {
-    /* manter centralizada em mobile */
-    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -565,22 +607,6 @@ body {
     height: 56px; /* dobrado de 28px para 56px em mobile/tablet */
   }
 }
-
-@media (max-width: 1100px) {
-  .top-bar {
-    max-width: 98vw;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-@media (max-width: 768px) {
-  .top-bar {
-    flex-direction: row;
-    max-width: 100vw;
-    padding-top: 10px;
-    padding-left: 4vw;
-    padding-right: 4vw;
-  }
   .logo-area {
     padding: 0;
     background: transparent;
@@ -597,4 +623,3 @@ body {
     background: transparent;
     box-shadow: none;
     color: #3c3c3b; }
-}
